@@ -67,6 +67,15 @@ export const ProductForm = () => {
       // coverImage,
       // productImages,
     };
+    if (!
+        (
+          productName
+          && productCode
+          && price
+          && manufacturerCountry
+        )
+    ) return;
+
     productsFromLocalStorage.push(productItem);
     //! Write an array (list) of products in Local Storage or send to the server:
     localStorage.setItem("productList", JSON.stringify(productsFromLocalStorage));
