@@ -64,8 +64,8 @@ export const ProductForm = () => {
       productCode,
       price,
       manufacturerCountry,
-      coverImage,
-      productImages,
+      // coverImage,
+      // productImages,
     };
     productsFromLocalStorage.push(productItem);
     //! Write an array (list) of products in Local Storage or send to the server:
@@ -136,15 +136,15 @@ export const ProductForm = () => {
             onChange={handleManufacturerCountryChange}
         />
       </label>
-      <label className={css.label}>
+      {/* <label className={css.label}>
         Додати обкладинку
           <input
             className={css.input}
             type="file"
             onChange={handleCoverImageChange}
           />
-      </label>
-      <label className={css.label}>
+      </label> */}
+      {/* <label className={css.label}>
         Додати зображення
           <input
             className={css.input}
@@ -152,7 +152,7 @@ export const ProductForm = () => {
             multiple
             onChange={handleProductImagesChange}
           />
-      </label>
+      </label> */}
         <button
           className={css.submitButtonForm}
           type="submit"

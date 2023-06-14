@@ -6,7 +6,7 @@ require("colors");
 
 
 const marketsRouter = require('./routes/api/marketsRouter.js');
-const ordersRouter = require('./routes/api/ordersRouter.js');
+const productsRouter = require('./routes/api/productsRouter.js');
 
 
 
@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 
 app.use('/api/markets', marketsRouter);
-app.use('/api/orders', ordersRouter);
+app.use('/api/products', productsRouter);
 
 
 

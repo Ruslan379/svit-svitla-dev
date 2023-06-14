@@ -15,7 +15,7 @@ const currentDate = moment().format("DD-MM-YYYY hh:mm:ss");
     await mongoose.connect(DB_HOST);
     app.listen(PORT);
     console.log(`Server is running on the port: ${PORT} `.bgGreen.red);
-    console.log(`Start TEST-project: Pizza Markets (Backend) `.bgRed.green);
+    console.log(`Start TEST-project: Svit Svitla [dev] (Backend) `.bgRed.green);
     console.log('Database connection successful '.bgBlue.yellow);
     console.log("Date & Time:".bgYellow.blue, currentDate.yellow);
     console.log('---------------------------------------'.yellow);
