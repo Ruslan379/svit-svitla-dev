@@ -5,7 +5,7 @@ import {
 } from 'react-redux'; 
 
 import { addProduct } from '../../redux/products/productsOperations';
-import { selectAllProducts, selectLoading } from '../../redux/products/productsSelectors';
+import { selectProducts, selectLoading } from '../../redux/products/productsSelectors';
 
 import css from './ProductForm.module.css';
 
@@ -15,11 +15,11 @@ export const ProductForm = () => {
   const isLoading = useSelector(selectLoading);
   console.log("isLoading:", isLoading); //!
 
-  const allProducts = useSelector(selectAllProducts);
-  console.log("allProducts:", allProducts); //!
+  const products = useSelector(selectProducts);
+  console.log("products:", products); //!
 
-  let productListLocalStorage = JSON.parse(localStorage.getItem("productList")) || [];
-  console.log("productListLocalStorage:", productListLocalStorage); //!
+  let productsFromLocalStorage = JSON.parse(localStorage.getItem("productList")) || [];
+  console.log("productsFromLocalStorage:", productsFromLocalStorage); //!
 
   const [productName, setProductName] = useState("");
   const [productCode, setProductCode] = useState("");
@@ -67,9 +67,9 @@ export const ProductForm = () => {
       coverImage,
       productImages,
     };
-    productListLocalStorage.push(productItem);
+    productsFromLocalStorage.push(productItem);
     //! Write an array (list) of products in Local Storage or send to the server:
-    localStorage.setItem("productList", JSON.stringify(productListLocalStorage));
+    localStorage.setItem("productList", JSON.stringify(productsFromLocalStorage));
     dispatch(addProduct(productItem)); //! send to the server:
     
     //! Сбросить значения полей формы после отправки

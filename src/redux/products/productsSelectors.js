@@ -1,7 +1,7 @@
 
 export const selectLoading = state => state.productsAll.isLoading;
 
-export const selectAllProducts = state => state.productsAll.products;
+export const selectProducts = state => state.productsAll.products;
 
 
 

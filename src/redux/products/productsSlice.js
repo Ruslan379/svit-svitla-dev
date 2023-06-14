@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
     getAllProducts,
-    addProduct
+    addProduct,
 } from './productsOperations';
 
 
@@ -30,7 +30,8 @@ const productsSlice = createSlice({
         [addProduct.rejected]: handleRejected,
 
         [getAllProducts.fulfilled](state, { payload }) {
-            state.orders = payload;
+            console.log("productsSlice/getAllProducts ==> payload:", payload); //!
+            state.products = payload;
             state.isLoading = false;
             state.error = null;
         },
@@ -40,7 +41,6 @@ const productsSlice = createSlice({
             state.products.push(payload);
             state.isLoading = false;
             state.error = null;
-
         },
     },
 });

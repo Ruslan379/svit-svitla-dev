@@ -13,7 +13,7 @@ axios.defaults.baseURL = 'http://localhost:3333/api'; //! local backend
 
 //? Working but not connected
 //! GET @ /products
-export const getAllProducts = createAsyncThunk(
+export const getAllProducts1 = createAsyncThunk(
     'products/getAllProducts',
     async (_, thunkAPI) => {
         try {
@@ -52,8 +52,17 @@ export const addProduct1 = createAsyncThunk(
     }
 );
 
+//! -------------- Plugs -----------------
+//* Working, used as plug and replacement addAllProducts
+//! GET @ /product
+export const getAllProducts = createAsyncThunk(
+    'products/getAllProducts',
+    async (AllProducts) => {
+        return AllProducts
+    }
+);
 
-//* Working, used as plug and replacement addProduct
+//* Working, used as GET and replacement addProduct
 //! POST @ /product
 export const addProduct = createAsyncThunk(
     'products/addProduct',
@@ -61,3 +70,4 @@ export const addProduct = createAsyncThunk(
         return productOne
     }
 );
+
