@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const { controllerWrapper } = require("../../middlewares")
-const { marketsControllers: ctrl } = require("../../controllers")
+const { catalogsControllers: ctrl } = require("../../controllers")
 
-router.get("/", controllerWrapper(ctrl.getAllMarkets));
+router.get("/", controllerWrapper(ctrl.getAllCatalogs));
 
 module.exports = router

@@ -5,7 +5,7 @@ require("dotenv").config()
 require("colors");
 
 
-const marketsRouter = require('./routes/api/marketsRouter.js');
+const catalogsRouter = require('./routes/api/catalogsRouter.js');
 const productsRouter = require('./routes/api/productsRouter.js');
 
 
@@ -26,7 +26,7 @@ app.use(express.static("public"));
 
 
 
-app.use('/api/markets', marketsRouter);
+app.use('/api/catalogs', catalogsRouter);
 app.use('/api/products', productsRouter);
 
 

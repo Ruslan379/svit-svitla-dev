@@ -1,8 +1,8 @@
 //! MAIN
-const marketsControllers = require("./marketsControllers")
+const catalogsControllers = require("./catalogsControllers")
 const productsControllers = require("./productsControllers");
 
 module.exports = {
-    marketsControllers,
+    catalogsControllers,
     productsControllers,
 }
