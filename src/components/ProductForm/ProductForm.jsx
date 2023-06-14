@@ -4,7 +4,7 @@ import {
   useSelector
 } from 'react-redux'; 
 
-import { addProduct } from '../../redux/products/productsOperations';
+import { getAllProducts, addProduct } from '../../redux/products/productsOperations';
 import { selectProducts, selectLoading } from '../../redux/products/productsSelectors';
 
 import css from './ProductForm.module.css';
@@ -54,7 +54,7 @@ export const ProductForm = () => {
     setProductImages(Array.from(files));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
 
     //! Добавьте здесь логику для обработки отправки формы
@@ -70,7 +70,8 @@ export const ProductForm = () => {
     productsFromLocalStorage.push(productItem);
     //! Write an array (list) of products in Local Storage or send to the server:
     localStorage.setItem("productList", JSON.stringify(productsFromLocalStorage));
-    dispatch(addProduct(productItem)); //! send to the server:
+    await dispatch(addProduct(productItem)); //! send to the server:
+    await dispatch(getAllProducts()); //! get from server:
     
     //! Сбросить значения полей формы после отправки
     setProductName("");

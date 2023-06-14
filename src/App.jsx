@@ -18,10 +18,10 @@ export function App() {
   const productListLocalStorage = JSON.parse(localStorage.getItem("productList")) || [];
   console.log("App-->productListLocalStorage:", productListLocalStorage); //!
 
-  dispatch(getAllProducts(productListLocalStorage));
-  // useEffect(() => {
-  //       dispatch(addAllProducts(productListLocalStorage));
-  //   }, [dispatch]);
+  // dispatch(getAllProducts());
+  useEffect(() => {
+        dispatch(getAllProducts());
+    }, [dispatch]);
 
 
   return (
